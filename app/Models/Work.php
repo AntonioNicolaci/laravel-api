@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Technology;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Work extends Model
 {
@@ -12,5 +13,10 @@ class Work extends Model
     public function type()
     {
         return $this->hasOne(Type::class);
+    }
+
+    public function technology()
+    {
+        return $this->belongToMany(Technology::class);
     }
 }
