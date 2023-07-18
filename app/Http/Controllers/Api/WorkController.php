@@ -10,7 +10,7 @@ class WorkController extends Controller
 {
     public function index()
     {
-        $works = Work::all();
+        $works = Work::with('type', 'technology')->paginate(6);
 
         return response()->json($works);
 
