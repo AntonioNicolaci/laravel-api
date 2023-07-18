@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Work;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Type extends Model
 {
@@ -13,6 +14,6 @@ class Type extends Model
 
     public function works()
     {
-        return $this->belongTo(Work::class);
+        return $this->hasMany(Work::class);
     }
 }
