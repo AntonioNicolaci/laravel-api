@@ -28,10 +28,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('works', function (Blueprint $table) {
-            // eliminare la chiave esterna
             $table->dropForeign('works_type_id_foreign');
 
-            // eliminare la colonna
             $table->dropColumn('type_id');
         });
     }
