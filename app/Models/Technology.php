@@ -12,7 +12,7 @@ class Technology extends Model
 
     public $timestamps = false;
 
-    public function posts() {
-        return $this->belongToMany(Work::class);
+    public function works() {
+        return $this->belongsToMany(Work::class);
     }
 }
